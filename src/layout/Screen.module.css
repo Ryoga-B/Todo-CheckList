@@ -1,0 +1,9 @@
+.screen {
+  padding: calc(16px + env(safe-area-inset-top)) calc(16px + env(safe-area-inset-right)) 16px
+    calc(16px + env(safe-area-inset-left));
+}
+
+.title {
+  margin: 0 0 16px;
+  font-size: 1.25rem;
+}

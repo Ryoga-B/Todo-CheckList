@@ -1,0 +1,34 @@
+/* CSS Modules: このファイルのクラス名は、ビルド時に他と重ならない名前へ自動で置き換えられる */
+
+.bar {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  /* ホームバーの分の余白を下に足す。env() は viewport-fit=cover のときに値が入る */
+  padding-bottom: env(safe-area-inset-bottom);
+  background: var(--color-bg);
+  border-top: 1px solid var(--color-border);
+}
+
+.tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  /* 片手で押しやすい高さを確保する */
+  min-height: var(--tabbar-height);
+  padding: 4px 0;
+  font-size: 0.6875rem;
+  color: var(--color-muted);
+  background: none;
+  border: none;
+}
+
+.tab[aria-current='page'] {
+  color: var(--color-primary);
+  font-weight: 700;
+}

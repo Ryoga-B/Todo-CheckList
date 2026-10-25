@@ -1,7 +1,8 @@
-import { AccountScreen } from './features/auth/AccountScreen'
 import { AuthProvider } from './features/auth/AuthProvider'
 import { LoginScreen } from './features/auth/LoginScreen'
 import { useAuth } from './features/auth/useAuth'
+import { AppShell } from './layout/AppShell'
+import styles from './App.module.css'
 
 // ログイン状態に応じて表示する画面を切り替える。
 // 未ログイン時はログイン画面だけを表示する（要件2.3）。
@@ -12,11 +13,11 @@ function Screens() {
   // 「戻り値がない経路がある」という型エラーで気づける
   switch (state.status) {
     case 'loading':
-      return <main className="screen screen--center">読み込み中…</main>
+      return <main className={styles.loading}>読み込み中…</main>
     case 'signedOut':
       return <LoginScreen />
     case 'signedIn':
-      return <AccountScreen />
+      return <AppShell />
   }
 }
 

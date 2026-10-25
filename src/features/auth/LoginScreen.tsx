@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useAuth } from './useAuth'
+import styles from './LoginScreen.module.css'
 
 export function LoginScreen() {
   const { signInWithGoogle } = useAuth()
@@ -17,7 +18,7 @@ export function LoginScreen() {
   }
 
   return (
-    <main className="screen screen--center">
+    <main className={styles.screen}>
       <button type="button" className="button" onClick={handleClick} disabled={pending}>
         Googleでログイン
       </button>

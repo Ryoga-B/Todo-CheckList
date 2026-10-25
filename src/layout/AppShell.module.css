@@ -1,0 +1,5 @@
+.shell {
+  min-height: 100dvh;
+  /* 固定フッターの高さ＋ホームバーの分を空けて、コンテンツの末尾がフッターの下に隠れないようにする */
+  padding-bottom: calc(var(--tabbar-height) + env(safe-area-inset-bottom));
+}

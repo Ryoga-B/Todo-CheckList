@@ -4,9 +4,16 @@
     <meta charset="UTF-8" />
     <!-- viewport-fit=cover は、iPhoneのセーフエリア（ノッチやホームバー）を CSS の env(safe-area-inset-*) で扱うために必要 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <!-- %BASE_URL% は Vite が vite.config.ts の base（/ouchi-board/）に置き換える。公開先のサブパスが変わっても参照が壊れない -->
+    <link rel="manifest" href="%BASE_URL%manifest.webmanifest" />
+    <!-- iOSのホーム画面アイコン。iOSは manifest の icons ではなく、こちらを使う -->
+    <link rel="apple-touch-icon" href="%BASE_URL%icons/apple-touch-icon.png" />
+    <meta name="theme-color" content="#2f6f4e" />
     <!-- ホーム画面に追加したとき、Safariのバーを出さずアプリのように起動させる（iOS用） -->
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <title>ouchi-board</title>
+    <!-- ホーム画面でのアイコン名。仮称で、後から変更できる -->
+    <meta name="apple-mobile-web-app-title" content="おうちボード" />
+    <title>おうちボード</title>
   </head>
   <body>
     <div id="root"></div>
