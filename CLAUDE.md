@@ -19,13 +19,12 @@
 
 ## コマンド
 
-<!-- 初期構成を作成した後、実際のコマンドに合わせて更新すること -->
-
 - 開発サーバー：`npm run dev`
+- ビルド結果の確認用サーバー：`npm run preview`（先に `npm run build` が必要）
 - Lint：`npm run lint`
-- 型チェック：`npm run typecheck`
-- テスト：`npm run test`
-- ビルド：`npm run build`
+- 型チェック：`npm run typecheck`（`tsc -b`）
+- テスト：`npm run test`（Vitest、1回実行）
+- ビルド：`npm run build`（型チェック後に `vite build`、出力先は `dist/`）
 
 作業の区切りでは、Lint・型チェック・テスト・ビルドがすべて通ることを確認してから完了とする。
 
