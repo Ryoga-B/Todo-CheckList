@@ -1,3 +1,15 @@
+/* アプリ全体で使う共通の値。色や大きさはここに集めて、各画面のCSSからは var(--名前) で参照する */
+:root {
+  --color-bg: #ffffff;
+  --color-text: #1c1c1e;
+  --color-primary: #2f6f4e;
+  --color-border: #d1d1d6;
+  --color-muted: #6c6c70;
+  --color-error: #b00020;
+  /* 固定フッターの高さ（セーフエリア分は含まない） */
+  --tabbar-height: 56px;
+}
+
 *,
 *::before,
 *::after {
@@ -7,31 +19,21 @@
 body {
   margin: 0;
   font-family: system-ui, -apple-system, 'Hiragino Sans', sans-serif;
+  color: var(--color-text);
+  background: var(--color-bg);
 }
 
-/* env(safe-area-inset-*) は iPhone のノッチやホームバーの分の余白。index.html の viewport-fit=cover とセットで効く */
-.screen {
-  min-height: 100dvh;
-  padding: env(safe-area-inset-top) calc(16px + env(safe-area-inset-right)) env(safe-area-inset-bottom)
-    calc(16px + env(safe-area-inset-left));
-}
-
-.screen--center {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-}
+/* 複数の画面で共通して使う部品。画面ごとのスタイルは各 *.module.css に書く */
 
 /* 片手で押しやすいよう、高さ48px以上を確保する */
 .button {
   min-height: 48px;
   padding: 0 24px;
   font-size: 1rem;
-  border: 1px solid #888;
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
   border-radius: 8px;
-  background: #fff;
+  background: var(--color-bg);
 }
 
 .button:disabled {
@@ -40,5 +42,5 @@ body {
 
 .error {
   margin: 0;
-  color: #b00020;
+  color: var(--color-error);
 }
