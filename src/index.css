@@ -8,3 +8,37 @@ body {
   margin: 0;
   font-family: system-ui, -apple-system, 'Hiragino Sans', sans-serif;
 }
+
+/* env(safe-area-inset-*) は iPhone のノッチやホームバーの分の余白。index.html の viewport-fit=cover とセットで効く */
+.screen {
+  min-height: 100dvh;
+  padding: env(safe-area-inset-top) calc(16px + env(safe-area-inset-right)) env(safe-area-inset-bottom)
+    calc(16px + env(safe-area-inset-left));
+}
+
+.screen--center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+/* 片手で押しやすいよう、高さ48px以上を確保する */
+.button {
+  min-height: 48px;
+  padding: 0 24px;
+  font-size: 1rem;
+  border: 1px solid #888;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.button:disabled {
+  opacity: 0.5;
+}
+
+.error {
+  margin: 0;
+  color: #b00020;
+}
